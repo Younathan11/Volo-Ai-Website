@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --color-background: #0b1326;
+  --color-primary: #b7c4ff;
+  --color-primary-container: #1855f3;
+  --color-on-primary-container: #dfe3ff;
+  --color-secondary: #d0bcff;
+  --color-secondary-container: #571bc1;
+  --color-tertiary: #fbabff;
+  --color-on-surface: #dae2fd;
+  --color-on-surface-variant: #c3c5d9;
+  --color-surface-bright: #31394d;
+  --color-surface-container: #171f33;
+  --color-surface-container-low: #131b2e;
+  --color-surface-container-high: #222a3d;
+  --color-surface-container-highest: #2d3449;
+  --color-outline-variant: #434656;
+  --color-error: #ffb4ab;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-body selection:bg-primary/30;
+  }
+}
+
+.glass-nav {
+  background: rgba(49, 57, 77, 0.6);
+  backdrop-filter: blur(20px);
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at top left, rgba(24, 85, 243, 0.15), transparent 40%),
+              radial-gradient(circle at bottom right, rgba(87, 27, 193, 0.15), transparent 40%);
+}
+
+.monolith-button {
+  background: linear-gradient(135deg, #1855f3, #571bc1);
+  position: relative;
+}
+
+.monolith-button::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: rgba(255,255,255,0.2);
+  border-radius: inherit;
+}
